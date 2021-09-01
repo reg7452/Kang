@@ -23,168 +23,151 @@ if first == 1: #처음방문이다
     p_num = input("전화번호를 입력해주세요: ")
     wr.writerow([2,'전화번호',p_num])
 
-    #adress = input("주소를 찾아주세요") # 주소찾기 만들기 #이까지는 계속 유지되는 정보
-    #wr.writerow([3,'주소',adress])
-    
-    #adress = 0 
-    print("1. 중구, 2. 서구, 3. 동구, 4. 영도구, 5. 부산진구, 6. 동래구, 7. 남구, 8. 북구, 9. 해운대구, 10. 사하구, 11. 금정구, 12. 강서구, 13. 연제구, 14.수영구, 15. 사상구, 16. 기장구") #기타를 만들지 고민중
-    adresses = []
-    #while adress==0:
-    
-    adress = int(input("주소를 선택해 주세요"))
-
-    if adress == 1:
-            adress = "중구"
-            adresses.append(adress)
-            adress=0
-            print("1. 영주동, 2. 대창동, 3. 중앙동, 4. 동광동, 5. 대청동, 6. 보수동, 7. 부평동, 8. 신창동, 9. 창선동, 10. 광복동, 11. 남포동")
-            adresses.append(adress)
-            
-            if adress = 
-    elif symptom == 2:
-                symptom = "기침"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 3:
-                symptom = "가래"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 4:
-                symptom = "호흡곤란"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 5:
-                symptom = "두통"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 6:
-                symptom = "근육통"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 7:
-                symptom = "오한"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 8:
-                symptom = "인후통"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 9:
-                symptom = "후각상실"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 10:
-                symptom = "미각상실"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 11:
-            break
-        else :
-            print("잘못입력하셨습니다")
-            adress=0
-    print(adress)   
+    adress = input("주소를 찾아주세요") # 주소찾기 만들기 #이까지는 계속 유지되는 정보
+    wr.writerow([3,'주소',adress]) #주소찾기 만드는중 (엑셀로 만들예정)
     
     wr.writerow([4,'1차 문진표'])
 
-    body_temp = input("현재 체온을 작성해 주세요") #여기서부터는 새로 받을 것
-    wr.writerow([5,'체온',body_temp])
+    #body_temp = input("현재 체온을 작성해 주세요") #여기서부터는 새로 받을 것
+    #wr.writerow([5,'체온',body_temp])
 
+    print("검사경위(이유)가 무었인가요?")
+    why = 0
+    while why == 0:
+        why = int(input("1. 자가격리, 2. 자가격리 해제전, 3. 유증상자, 4. 보건소 재난문자 연락, 5. 해외입국자, 6. 해외입국자접촉자, 7. 집단발생지 방문자, 8. 확진자접촉, 9. 선제검사, 10. 본인판단"))
     
-    print("14일 이내에 해외여행 방문경험이 있나요?")
-    overseas = int(input("1. 예, 2. 아니오"))
-    if overseas == 1:
-        overseas = "예"
-        wr.writerow([6,'해외방문경험',overseas])
-
-    elif overseas ==2:
-        overseas ="아니오"
-        wr.writerow([6,'해외방문경험',overseas])
-
-    print("확진자와 접촉이 있었나요?")
-    contact = int(input("1. 예, 2. 아니오"))
-    if contact == 1:
-        contact = "예"
-        wr.writerow([7,'확진자 접촉 유무',contact])
-
-    elif contact ==2:
-        contact ="아니오"
-        wr.writerow([7,'확진자 접촉 유무',contact])
-
-    print("확진자발생 장소에 방문한 적이 있나요?")
-    contact_place = int(input("1. 예, 2. 아니오"))
-    if contact_place == 1:
-        contact_place = "예"
-        wr.writerow([8,'동선겹침 유무',contact_place])
-
-    elif contact_place ==2:
-        contact_place ="아니오"
-        wr.writerow([8,'동선겹침 유무',contact_place])
-    
-    symptom = 0 
-    print("1. 고열(37.5이상), 2. 기침, 3. 가래, 4. 호흡곤란, 5. 두통, 6. 근육통, 7. 오한, 8. 인후통, 9. 후각상실, 10. 미각상실 11.없음") #기타를 만들지 고민중
-    symptoms = []
-    while symptom==0:
-    
-        symptom = int(input("증상을 선택하여주세요(복수선택가능)"))
-
-        if symptom == 1:
-                symptom = "고열(37.5이상)"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 2:
-                symptom = "기침"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 3:
-                symptom = "가래"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 4:
-                symptom = "호흡곤란"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 5:
-                symptom = "두통"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 6:
-                symptom = "근육통"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 7:
-                symptom = "오한"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 8:
-                symptom = "인후통"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 9:
-                symptom = "후각상실"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 10:
-                symptom = "미각상실"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 11:
+        if why == 1:
+            why = "자가격리"
+            wr.writerow([6,'자가격리',why])
+            print (why)
             break
-        else :
-            print("잘못입력하셨습니다")
-            symptom=0
-    print(symptoms)   
+        
+        elif why ==2:
+            why ="아니오"
+            wr.writerow([6,'자가격리 해제전',why])
+            print (why)
+            break
 
-    wr.writerow([9,'증상',symptoms])
+        elif why ==3:
+            why ="유증상자"
+            wr.writerow([6,'유증상자',why])
+            print (why)
+            
+            symptom = 0
+            print("1. 고열(37.5이상), 2. 기침, 3. 가래, 4. 호흡곤란, 5. 두통, 6. 근육통, 7. 오한, 8. 인후통, 9. 후각상실, 10. 미각상실 11.없음") #기타를 만들지 고민중
+            symptoms = []
+            while symptom==0:
+    
+                symptom = int(input("증상을 선택하여주세요(복수선택가능)"))
+
+                if symptom == 1:
+                    symptom = "고열(37.5이상)"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 2:
+                    symptom = "기침"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 3:
+                    symptom = "가래"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 4:
+                    symptom = "호흡곤란"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 5:
+                    symptom = "두통"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 6:
+                    symptom = "근육통"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 7:
+                    symptom = "오한"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 8:
+                    symptom = "인후통"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 9:
+                    symptom = "후각상실"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 10:
+                    symptom = "미각상실"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 11:
+                    break
+                else :
+                    print("잘못입력하셨습니다")
+                symptom=0
+                
+                print(symptoms)   
+
+                wr.writerow([6-3,'증상',symptoms])    
+            
+            break
+        
+        
+        elif why ==4:
+            why ="보건소 재난문자 연락"
+            wr.writerow([6,'보건소 재난문자 연락',why])
+            print (why)
+            break
+        
+        elif why ==5:
+            why ="해외입국자"
+            wr.writerow([6,'해외입국자',why]) #해외어딘지
+            print (why)
+            break
+        
+        elif why ==6:
+            why ="해외입국자 접촉자"
+            wr.writerow([6,'해외입국자 접촉자',why]) #해외어딘지
+            print (why)
+            break
+        
+        elif why ==7:
+            why ="집단발생지" #어딘지?
+            wr.writerow([6,'집단발생지',why])
+            print (why)
+            break
+        
+        elif why ==8:
+            why ="확진자접촉"
+            wr.writerow([6,'확진자접촉',why])
+            print (why)
+            break
+        
+        elif why ==9:
+            why ="선제검사"
+            wr.writerow([6,'선제검사',why])
+            print (why)
+            break
+        
+        elif why ==10:
+            why ="본인판단"
+            wr.writerow([6,'본인판단',why])
+            print (why)
+            break
+        
+        else :
+            print("잘못 입력하셨습니다.")
+            why = 0
 
     print("개인정보 수집에 동의하십니까?")
     agree = int(input("1. 예, 2. 아니오"))
     if agree == 1:
         agree = "예"
-        wr.writerow([10,'개인정보 수집 동의여부',agree])
+        wr.writerow([7,'개인정보 수집 동의여부',agree])
 
     elif agree ==2:
         agree ="아니오"
-        wr.writerow([10,'개인정보 수집 동의여부',agree])
+        wr.writerow([7,'개인정보 수집 동의여부',agree])
 
     f.close()
 
@@ -209,104 +192,146 @@ else : #방문경험이 있다
 
     wr.writerow([4,n+'차 문진표'])#새로받을부분
 
-    body_temp = input("현재 체온을 작성해 주세요")
-    wr.writerow([5,'체온',body_temp])
+    #body_temp = input("현재 체온을 작성해 주세요")
+    #wr.writerow([5,'체온',body_temp])
 
     
-    print("14일 이내에 해외여행 방문경험이 있나요?")
-    overseas = int(input("1. 예, 2. 아니오"))
-    if overseas == 1:
-        overseas = "예"
-        wr.writerow([6,'해외방문경험',overseas])
-
-    elif overseas ==2:
-        overseas ="아니오"
-        wr.writerow([6,'해외방문경험',overseas])
-
-    print("확진자와 접촉이 있었나요?")
-    contact = int(input("1. 예, 2. 아니오"))
-    if contact == 1:
-        contact = "예"
-        wr.writerow([7,'확진자 접촉 유무',contact])
-
-    elif contact ==2:
-        contact ="아니오"
-        wr.writerow([7,'확진자 접촉 유무',contact])
-
-    print("확진자발생 장소에 방문한 적이 있나요?")
-    contact_place = int(input("1. 예, 2. 아니오"))
-    if contact_place == 1:
-        contact_place = "예"
-        wr.writerow([8,'동선겹침 유무',contact_place])
-
-    elif contact_place ==2:
-        contact_place ="아니오"
-        wr.writerow([8,'동선겹침 유무',contact_place])
+    print("검사경위(이유)가 무었인가요?")
+    why = 0
+    while why == 0:
+        why = int(input("1. 자가격리, 2. 자가격리 해제전, 3. 유증상자, 4. 보건소 재난문자 연락, 5. 해외입국자, 6. 해외입국자접촉자, 7. 집단발생지 방문자, 8. 확진자접촉, 9. 선제검사, 10. 본인판단"))
     
-    symptom = 0 
-    print("1. 고열(37.5이상), 2. 기침, 3. 가래, 4. 호흡곤란, 5. 두통, 6. 근육통, 7. 오한, 8. 인후통, 9. 후각상실, 10. 미각상실 11.없음") #기타를 만들지 고민중
-    symptoms = []
-    while symptom==0:
-    
-        symptom = int(input("증상을 선택하여주세요(복수선택가능)"))
-
-        if symptom == 1:
-                symptom = "고열(37.5이상)"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 2:
-                symptom = "기침"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 3:
-                symptom = "가래"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 4:
-                symptom = "호흡곤란"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 5:
-                symptom = "두통"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 6:
-                symptom = "근육통"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 7:
-                symptom = "오한"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 8:
-                symptom = "인후통"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 9:
-                symptom = "후각상실"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 10:
-                symptom = "미각상실"
-                symptoms.append(symptom)
-                symptom=0
-        elif symptom == 11:
+        if why == 1:
+            why = "자가격리"
+            wr.writerow([6,'자가격리',why])
+            print (why)
             break
-        else :
-            print("잘못입력하셨습니다")
-            symptom=0
-    print(symptoms)   
+        
+        elif why ==2:
+            why ="아니오"
+            wr.writerow([6,'자가격리 해제전',why])
+            print (why)
+            break
 
-    wr.writerow([9,'증상',symptoms])
+        elif why ==3:
+            why ="유증상자"
+            wr.writerow([6,'유증상자',why])
+            print (why)
+            
+            symptom = 0
+            print("1. 고열(37.5이상), 2. 기침, 3. 가래, 4. 호흡곤란, 5. 두통, 6. 근육통, 7. 오한, 8. 인후통, 9. 후각상실, 10. 미각상실 11.없음") #기타를 만들지 고민중
+            symptoms = []
+            while symptom==0:
+    
+                symptom = int(input("증상을 선택하여주세요(복수선택가능)"))
+
+                if symptom == 1:
+                    symptom = "고열(37.5이상)"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 2:
+                    symptom = "기침"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 3:
+                    symptom = "가래"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 4:
+                    symptom = "호흡곤란"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 5:
+                    symptom = "두통"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 6:
+                    symptom = "근육통"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 7:
+                    symptom = "오한"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 8:
+                    symptom = "인후통"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 9:
+                    symptom = "후각상실"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 10:
+                    symptom = "미각상실"
+                    symptoms.append(symptom)
+                    symptom=0
+                elif symptom == 11:
+                    break
+                else :
+                    print("잘못입력하셨습니다")
+                symptom=0
+                
+                print(symptoms)   
+
+                wr.writerow([6-3,'증상',symptoms])    
+            
+            break
+        
+        
+        elif why ==4:
+            why ="보건소 재난문자 연락"
+            wr.writerow([6,'보건소 재난문자 연락',why])
+            print (why)
+            break
+        
+        elif why ==5:
+            why ="해외입국자"
+            wr.writerow([6,'해외입국자',why]) #해외어딘지
+            print (why)
+            break
+        
+        elif why ==6:
+            why ="해외입국자 접촉자"
+            wr.writerow([6,'해외입국자 접촉자',why]) #해외어딘지
+            print (why)
+            break
+        
+        elif why ==7:
+            why ="집단발생지" #어딘지?
+            wr.writerow([6,'집단발생지',why])
+            print (why)
+            break
+        
+        elif why ==8:
+            why ="확진자접촉"
+            wr.writerow([6,'확진자접촉',why])
+            print (why)
+            break
+        
+        elif why ==9:
+            why ="선제검사"
+            wr.writerow([6,'선제검사',why])
+            print (why)
+            break
+        
+        elif why ==10:
+            why ="본인판단"
+            wr.writerow([6,'본인판단',why])
+            print (why)
+            break
+        
+        else :
+            print("잘못 입력하셨습니다.")
+            why = 0
 
     print("개인정보 수집에 동의하십니까?")
     agree = int(input("1. 예, 2. 아니오"))
     if agree == 1:
         agree = "예"
-        wr.writerow([10,'개인정보 수집 동의여부',agree])
+        wr.writerow([7,'개인정보 수집 동의여부',agree])
 
     elif agree ==2:
         agree ="아니오"
-        wr.writerow([10,'개인정보 수집 동의여부',agree])
+        wr.writerow([7,'개인정보 수집 동의여부',agree])
 
     f.close()
