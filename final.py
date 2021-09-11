@@ -8,6 +8,8 @@ p_nums=[]
 whys=[]
 agrees=[]
 
+#입력칸 나오게 하는거
+
 #step 1
 if GPIO.event_detected(Button_next):
     
@@ -15,8 +17,9 @@ if GPIO.event_detected(Button_next):
     print("1.예 2.아니오")     #만약에 재방문이면 step4 에서 step 9로 이동
     visit = ['예', '아니오']
     numsize = len(visit)
-    visit_num = num_input
     #답변 숫자 입력한 후 다음 누름
+    visit_num = num_input
+    
     visits.append(visit[visit_num - 1])
     visit_num = 0
     num_input = 0
@@ -298,8 +301,8 @@ if visits[0]=='예':
 
     if GPIO.event_detected(Button_next):
         print("검사경위(이유)가 무었인가요?")
-        print("1. 자가격리, 2. 자가격리 해제전, 3. 유증상자, 4. 보건소 재난문자 연락, 5. 해외입국자, 6. 해외입국자접촉자, 7. 집단발생지 방문자, 8. 확진자접촉, 9. 선제검사, 10. 본인판단")
-        why = ['자가격리', '자가격리 해제전', '유증상자', '보건소 재난문자 연락', '해외입국자', '해외입국자접촉자', '집단발생지 방문자', '확진자접촉', '선제검사', '본인판단']
+        print("1. 자가격리, 2. 유증상자, 3. 보건소 재난문자 연락, 4. 해외입국자, 5. 집단발생지 방문자, 6. 확진자접촉, 7. 본인판단")
+        why = ['자가격리', '유증상자', '보건소 재난문자 연락', '해외입국자', '집단발생지 방문자', '확진자접촉', '본인판단']
         numsize = len(why)
         why_num = num_input
         whys.append(why[why_num - 1])
@@ -312,8 +315,8 @@ if visits[0]=='예':
         if num_input == 3:
             symptom = 0
             print("증상을 선택해 주세요")
-            print("1. 고열(37.5이상), 2. 기침, 3. 가래, 4. 호흡곤란, 5. 두통, 6. 근육통, 7. 오한, 8. 인후통, 9. 후각상실, 10. 미각상실, 11. 없음 ") #기타를 만들지 고민중
-            symptom = ['고열(37.5이상)', '기침', '가래', '호흡곤란', '두통', '근육통', '오한', '인후통', '후각상실', '미각상실', '없음']
+            print("1. 고열(37.5이상), 2. 기침, 3. 가래, 4. 호흡곤란, 5. 두통, 6. 근육통, 7. 오한, 8. 인후통, 9. 후각상실, 10. 미각상실, 11. 설사 12. 콧물 13. 없음 ") #기타를 만들지 고민중
+            symptom = ['고열(37.5이상)', '기침', '가래', '호흡곤란', '두통', '근육통', '오한', '인후통', '후각상실', '미각상실', '설사', '콧물', '없음']
             numsize = len(symptom)
             symptoms = []
             while symptom==0:
@@ -369,14 +372,24 @@ if visits[0]=='예':
                     symptom=0
                     num_input = 0
                 elif symptom_num == 11:
+                    symptom = "설사"
+                    symptoms.append(symptom)
+                    symptom=0
+                    num_input = 0
+                elif symptom_num == 12:
+                    symptom = "콧물"
+                    symptoms.append(symptom)
+                    symptom=0
+                    num_input = 0        
+                elif symptom_num == 13:
                     break
                 
                 symptom=0
                 num_input=0
                 print(symptoms)
             
-        wr.writerow([4.5,'증상',symptoms]) 
-            
+        wr.writerow([4.5,'증상',symptoms])
+     
     #step 11
     if GPIO.event_detected(Button_next):
         
